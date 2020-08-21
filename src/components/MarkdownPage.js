@@ -156,6 +156,8 @@ class MakrdownPage extends React.Component {
 
   render() {
     const theme = this.props.theme;
+    const { navigation } = this.props;
+    const { markdown } = this.state;
     return (
       <div>
         <Layout
@@ -180,7 +182,7 @@ class MakrdownPage extends React.Component {
                 borderTop: "1px solid " + theme.seperator,
               }}
             >
-              {this.props.navigation}
+              { navigation }
             </Scroller>
           </Sider>
           <Content
@@ -203,7 +205,7 @@ class MakrdownPage extends React.Component {
               <MarkdownWrapper>
                 <ReactMarkdown
                   escapeHtml={false}
-                  source={this.state.markdown}
+                  source={ markdown }
                 />
               </MarkdownWrapper>
             </div>
